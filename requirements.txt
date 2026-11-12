@@ -1,4 +1,5 @@
 requests>=2.31
 python-dotenv>=1.0
-# Added when Episode 1 starts:
-# torch, numpy, matplotlib, jupyter
+ipykernel>=6.29     # run notebooks/ in VS Code (Episode 1)
+# Added when Episode 2 starts:
+# torch, matplotlib

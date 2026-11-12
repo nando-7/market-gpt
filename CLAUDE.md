@@ -18,7 +18,15 @@ The user is a software developer (PHP/Laravel background, newer to Python/ML). E
 - Alpaca news API (Benzinga, 2015–present) via `scripts/download_news.py` → `data/raw/news/YYYY-MM.jsonl` (read-only, resumable). One month ≈ 17k articles, 1.6 MB of headlines, ~4 min to download.
 - Finnhub (current key) returned no history for 2024–25; not used for now.
 - Data cleanup still to do: HTML entities in summaries (`&#39;`), boilerplate like "Trading Halt: …" and "12 … Stocks Moving In …" roundups.
-- Small-cap catalyst coverage is thin (2 of 15 older movers had news), so "no news" is its own category in Part 2.
+- 2024 downloaded in full: 261,904 articles, 116 MB. News is for **all** stocks (plus macro news with no symbol), not just scanner candidates.
+- market-scanner "live candidates" = stocks priced $1–$20 that closed up ≥10% the previous trading day; candles exist only for those stock-days (2024: 13,773 stock-days, 1,932 stocks; 2025: 17,741; 2026: 14,886).
+- News coverage of 2024 candidate days is thin: 22% have news on that symbol the same day, 38% same day or the day before, 47% within 3 days. "No news" is the majority case and its own category in Part 2.
+- market-scanner keeps 2025-07–12 as locked validation and 2026 as reserve for its *trading* research. Using that period here is fine for learning, but nothing from this project should feed back into tuning that strategy.
+
+## Docs to keep updated
+
+- `LEARNING.md`: plain-language explanation of each concept/step built so far, for the user's understanding. Update it at the end of every episode or significant step.
+- `JOURNAL.md`: dated entries with numbers, decisions and surprises.
 
 ## Environment
 
@@ -29,4 +37,4 @@ The user is a software developer (PHP/Laravel background, newer to Python/ML). E
 
 ## Status (2026-11-12)
 
-Skeleton, README, JOURNAL.md and downloader done; June 2024 downloaded. Next: user downloads 2024 in full, then Episode 1 — character-level tokenizer.
+Episode 1 done (`notebooks/01_char_tokenizer.ipynb`, `market_gpt/`); re-run on the full 2024 download (239,501 headlines, 187-char vocab). Decided: training excludes `market_gpt.data.MACHINE_MADE_KINDS` (machine-made templates); analyst ratings are kept. Next: Episode 2, the bigram model (PyTorch gets installed then).
