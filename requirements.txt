@@ -1,0 +1,4 @@
+requests>=2.31
+python-dotenv>=1.0
+# Added when Episode 1 starts:
+# torch, numpy, matplotlib, jupyter

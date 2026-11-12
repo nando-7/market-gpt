@@ -1,0 +1,12 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+
+# Downloaded datasets and trained weights are large and reproducible.
+data/*
+!data/.gitkeep
+checkpoints/
+*.pt
