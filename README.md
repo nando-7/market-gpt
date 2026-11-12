@@ -41,4 +41,4 @@ Data and model weights are not committed (`data/`, `checkpoints/`).
 
 ## Journal
 
-Progress, decisions and surprises go in [JOURNAL.md](JOURNAL.md).
+Progress, decisions and surprises go in [JOURNAL.md](JOURNAL.md). A plain-language explanation of each concept so far is in [LEARNING.md](LEARNING.md).
